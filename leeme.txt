@@ -1,0 +1,12 @@
+Sistema de Registro de Productos
+
+Pasos para instalar:
+1. Crear una base de datos (mysql, ver script tablas.sql).
+2. Ejecutar el script insert.sql
+
+4. Abrir index.html en un navegador.
+
+Requisitos:
+- PHP 8.2
+- Mysql  15.1
+
