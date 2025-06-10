@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
  bodegaSelect.addEventListener('change', function () {
     const bodegaSeleccionada = this.value;
 
-    sucursalSelect.innerHTML = '<option value="" disabled selected>Seleccione una sucursal</option>';
+    sucursalSelect.innerHTML = '<option value="" disabled selected> </option>';
 
     if (!bodegaSeleccionada) return;
 
@@ -144,6 +144,19 @@ document.getElementById('guardar').addEventListener('click', function () {
             if (data.estado === 'exito') {
               alert('Producto guardado correctamente.');
               document.getElementById('formProducto').reset(); 
+
+             
+      
+     
+              document.getElementById('bodega').selectedIndex = 0;
+              document.getElementById('sucursal').innerHTML = '<option value="" disabled selected> </option>';
+              document.getElementById('moneda').selectedIndex = 0;
+              
+          
+              const checkboxes = document.querySelectorAll('input[name="material[]"]');
+              checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+              });
             } else {
               alert('Error al guardar el producto: ' + data.mensaje);
             }

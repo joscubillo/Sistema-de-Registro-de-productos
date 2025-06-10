@@ -8,25 +8,26 @@
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <h1>Formulario de Producto</h1>
+
 
   <?php
     require './configuracion/database.php';
     $db = conectarDb();
 ?>
-  
+    <div class="form-container">
+        <h1>Formulario de Producto</h1>
   <form id="formProducto">
     <div class="form-row">
       <div class="form-col">
         <div class="form-group">
           <label for="codigo">Código:</label>
-          <input type="text" id="codigo" name="codigo" class="form-control" value=" ">
+          <input type="text" id="codigo" name="codigo" class="form-control" value="">
         </div>
       </div>
       <div class="form-col">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" class="form-control" value=" ">
+          <input type="text" id="nombre" name="nombre" class="form-control" value="">
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@
           $resultadoBodega = mysqli_query($db,$querybodega);
         ?>
           <select id="bodega" name="bodega" class="form-control">
-          <option value="" disabled>Seleccione una bodega</option>
+          <option value="" disabled selected></option>
             <?php
 
        
@@ -90,7 +91,7 @@
               $resultadomoneda = mysqli_query($db,$querymoneda);
             ?>
           <select id="moneda" name="moneda" class="form-control">
-              <option value="" disabled>Seleccione una moneda</option>
+              <option value="" disabled selected> </option>
                 <?php
 
           
@@ -109,7 +110,7 @@
       <div class="form-col">
         <div class="form-group">
           <label for="precio">Precio:</label>
-          <input type="text" id="precio" name="precio" class="form-control" value=" ">
+          <input type="text" id="precio" name="precio" class="form-control" value="">
         </div>
       </div>
     </div>
@@ -132,6 +133,7 @@
 
     <button type="button" id="guardar">Guardar Producto</button>
   </form>
+  </div>
 
  
 
